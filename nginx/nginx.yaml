@@ -1,0 +1,23 @@
+---
+- name: Install nginx
+  hosts: localhost
+  become: true # to run commands with sudo  or root elivated access
+  tasks:
+
+   - name: Install nginx On debian
+     apt:
+      name: nginx
+      state: present
+    #  when: ansible_os_family == "Debian"
+  
+
+  #  - name: Install nginx on Red Hat
+  #    yum:
+  #     name: nginx
+  #     state: present # this ensures that nginx is installed
+  #    when: ansible_os_family == "RedHat"
+
+   - name: Start nginx service
+     service:
+      name: nginx
+      enabled: yes
