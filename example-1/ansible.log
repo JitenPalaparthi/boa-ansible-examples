@@ -1,0 +1,20 @@
+Using /etc/ansible/ansible.cfg as config file
+
+PLAY [Demo purpose] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+fatal: [lab_machine2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 35.197.83.108 port 23213: Connection timed out", "unreachable": true}
+ok: [lab-machine]
+
+TASK [Print a Message] *********************************************************
+ok: [lab-machine] => {
+    "msg": "Hello World, this is a simple debug module usage"
+}
+
+TASK [HelloWorld] **************************************************************
+changed: [lab-machine] => {"changed": true, "cmd": ["echo", "Hello World"], "delta": "0:00:00.005214", "end": "2024-03-08 10:13:53.774582", "msg": "", "rc": 0, "start": "2024-03-08 10:13:53.769368", "stderr": "", "stderr_lines": [], "stdout": "Hello World", "stdout_lines": ["Hello World"]}
+
+PLAY RECAP *********************************************************************
+lab-machine                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+lab_machine2               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+

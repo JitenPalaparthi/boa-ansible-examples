@@ -1,0 +1,9 @@
+---
+- name: Demo purpose
+  hosts: lab_hosts
+  tasks:
+    - name: Print a Message
+      debug:
+        msg: "Hello World, this is a simple debug module usage"
+    - name: HelloWorld
+      command: echo "Hello World"
